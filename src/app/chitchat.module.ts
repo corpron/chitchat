@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { ChitChatComponent } from './chitchat.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    ChitChatComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ChitChatComponent]
 })
-export class AppModule { }
+export class ChitChatModule { }
