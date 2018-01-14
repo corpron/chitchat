@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ChatEntry } from './chat-entry';
 import { MessageBotService } from '../../services/message-bot/message-bot.service';
 

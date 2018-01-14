@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChitchatChatComponent } from './chitchat-chat.component';
+import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MessageBotService } from '../../services/message-bot/message-bot.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ChitchatChatComponent', () => {
   let component: ChitchatChatComponent;
@@ -8,7 +12,16 @@ describe('ChitchatChatComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChitchatChatComponent ]
+      declarations: [
+        ChitchatChatComponent],
+      imports: [
+        FormsModule,
+        RouterTestingModule.withRoutes([]),
+        HttpClientModule
+      ],
+      providers: [
+        MessageBotService
+      ]
     })
     .compileComponents();
   }));
