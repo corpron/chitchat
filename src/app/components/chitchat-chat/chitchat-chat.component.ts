@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ChatEntry } from './chat-entry';
 import { MessageBotService } from '../../services/message-bot/message-bot.service';
 
+// Chat page component. Users can chat with the Echo Bot.
+
 @Component({
   selector: 'chitchat-chat',
   templateUrl: './chitchat-chat.component.html',
@@ -19,6 +21,7 @@ export class ChitchatChatComponent implements OnInit {
               private messageBotService: MessageBotService) {
   }
 
+  // Get the name from the URL query parameters
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.name = params['name'];
@@ -26,6 +29,8 @@ export class ChitchatChatComponent implements OnInit {
     this.focusOnEntryField();
   }
 
+  // Send a new message to the Echo Bot and display the response. Reset the message entry field and scroll
+  // to the bottom of the chat field
   enterMessage() {
     this.chatHistory.push(new ChatEntry(this.name, this.nextEntry));
     this.messageBotService.postMessage(this.nextEntry).subscribe(
@@ -41,7 +46,8 @@ export class ChitchatChatComponent implements OnInit {
     this.focusOnEntryField();
   }
 
-  focusOnEntryField(){
+  // Reset focus on the chat entry field
+  focusOnEntryField() {
     this.chatEntryField.nativeElement.focus();
   }
 

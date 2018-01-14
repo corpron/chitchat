@@ -3,6 +3,8 @@ import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { NameEntryComponent } from '../../components/name-entry/name-entry.component';
 
+// Service for opening and closing the overlay
+
 @Injectable()
 export class NameEntryOverlayService {
   overlayRef = null;
@@ -10,6 +12,7 @@ export class NameEntryOverlayService {
   constructor(private overlay: Overlay) {
   }
 
+  // open the overlay. do not create a second one if one is already open
   open() {
     if (this.overlayRef == null) {
       const config = new OverlayConfig({
@@ -22,6 +25,7 @@ export class NameEntryOverlayService {
     }
   }
 
+  // close the overlay
   close() {
     if (this.overlayRef !== null) {
       this.overlayRef.detach();

@@ -3,6 +3,8 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 import { Observable } from 'rxjs/Observable';
 import { NameEntryOverlayService } from '../name-entry-overlay/name-entry-overlay.service';
 
+// ChatGuard for not allowing users to get to the Chat page unless they have a name in the URL
+
 @Injectable()
 export class ChatGuard implements CanActivate {
 
@@ -10,6 +12,8 @@ export class ChatGuard implements CanActivate {
               private nameEntryOverlayService: NameEntryOverlayService) {
   }
 
+  // Check if the URL has the name. if so, then they can get to the chat page. Otherwise
+  // redirect them to the root route
   canActivate(next: ActivatedRouteSnapshot,
               state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 

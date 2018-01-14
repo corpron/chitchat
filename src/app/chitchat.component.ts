@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NameEntryOverlayService } from './services/name-entry-overlay/name-entry-overlay.service';
 import { NavigationEnd, Router } from '@angular/router';
 
+// ChitChatComponent for the root view
 @Component({
   selector: 'chitchat',
   templateUrl: './chitchat.component.html',
@@ -14,6 +15,7 @@ export class ChitchatComponent implements OnInit {
               private router: Router) {
   }
 
+  // if this is the root route, then open the overlay. otherwise, it should be closed
   ngOnInit() {
     this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
