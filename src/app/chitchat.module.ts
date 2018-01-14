@@ -7,7 +7,9 @@ import { NameEntryOverlayService } from './services/name-entry-overlay/name-entr
 import { FormsModule } from '@angular/forms';
 import { ChitchatChatComponent } from './components/chitchat-chat/chitchat-chat.component';
 import { ChitchatRoutingModule } from './chitchat-routing.module';
-import { ChatGuard } from "./services/chat-guard/chat-guard.guard";
+import { ChatGuard } from './services/chat-guard/chat-guard.guard';
+import { HttpClientModule } from '@angular/common/http';
+import { MessageBotService } from './services/message-bot/message-bot.service';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,14 @@ import { ChatGuard } from "./services/chat-guard/chat-guard.guard";
     BrowserModule,
     OverlayModule,
     FormsModule,
-    ChitchatRoutingModule
+    ChitchatRoutingModule,
+    HttpClientModule
   ],
-  providers: [NameEntryOverlayService,
-             ChatGuard],
+  providers: [
+    NameEntryOverlayService,
+    ChatGuard,
+    MessageBotService
+  ],
   entryComponents: [NameEntryComponent],
   bootstrap: [ChitchatComponent]
 })

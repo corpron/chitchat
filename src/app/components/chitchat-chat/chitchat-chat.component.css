@@ -14,6 +14,7 @@
 }
 
 .chat-history{
+  word-wrap: break-word;
   padding: 1rem;
   box-sizing: border-box;
   border-style: solid;
@@ -46,4 +47,9 @@
 .name-label{
   font-weight: bold;
   color: #FF0000;
+}
+
+.chat-entry{
+  display: flex;
+  white-space: pre-wrap;
 }

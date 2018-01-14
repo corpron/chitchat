@@ -3,10 +3,10 @@
         (ngSubmit)="enterMessage()"
         class="chat-form">
     <h1>Chitchat with {{name}}</h1>
-    <div class="chat-history">
+    <div #chatHistoryPanel class="chat-history">
       <ng-container *ngFor="let entry of chatHistory">
         <div class="chat-entry">
-          <span class="name-label">{{entry.author}}</span><span>:</span><span>{{entry.message}}</span>
+          <span class="name-label">{{entry.author}}: </span><span>{{entry.message}}</span>
         </div>
       </ng-container>
     </div>

@@ -14,7 +14,7 @@ const routes: Routes = [
     component: ChitchatChatComponent,
     canActivate: [ChatGuard]
   }
-]
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NameEntryOverlayService } from './services/name-entry-overlay/name-entry-overlay.service';
-import { NavigationEnd, Router } from "@angular/router";
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'chitchat',
