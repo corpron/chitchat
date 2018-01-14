@@ -13,6 +13,7 @@ export class ChitchatChatComponent implements OnInit {
   chatHistory: Array<ChatEntry> = new Array();
   nextEntry: string;
   @ViewChild('chatHistoryPanel') private chatHistoryPanel: ElementRef;
+  @ViewChild('chatEntryField') private chatEntryField: ElementRef;
 
   constructor(private route: ActivatedRoute,
               private messageBotService: MessageBotService) {
@@ -22,6 +23,7 @@ export class ChitchatChatComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.name = params['name'];
     });
+    this.focusOnEntryField();
   }
 
   enterMessage() {
@@ -36,6 +38,11 @@ export class ChitchatChatComponent implements OnInit {
         this.chatHistory.push(new ChatEntry('Error', 'Echo Bot is currently unavailable. Please try again later.'));
       }
     );
+    this.focusOnEntryField();
+  }
+
+  focusOnEntryField(){
+    this.chatEntryField.nativeElement.focus();
   }
 
 }
