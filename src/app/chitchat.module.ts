@@ -1,16 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { ChitChatComponent } from './chitchat.component';
+import { ChitchatComponent } from './chitchat.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { NameEntryComponent } from './components/name-entry/name-entry.component';
+import { NameEntryOverlayService } from './services/name-entry-overlay/name-entry-overlay.service';
+import { FormsModule } from '@angular/forms';
+import { ChitchatChatComponent } from './components/chitchat-chat/chitchat-chat.component';
+import { ChitchatRoutingModule } from './chitchat-routing.module';
+import { ChatGuard } from "./services/chat-guard/chat-guard.guard";
 
 @NgModule({
   declarations: [
-    ChitChatComponent
+    ChitchatComponent,
+    NameEntryComponent,
+    ChitchatChatComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    OverlayModule,
+    FormsModule,
+    ChitchatRoutingModule
   ],
-  providers: [],
-  bootstrap: [ChitChatComponent]
+  providers: [NameEntryOverlayService,
+             ChatGuard],
+  entryComponents: [NameEntryComponent],
+  bootstrap: [ChitchatComponent]
 })
-export class ChitChatModule { }
+export class ChitchatModule {
+}

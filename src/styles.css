@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+.chitchat-input{
+  height: 2rem;
+  padding-left: 1rem;
+  margin-top: .5rem;
+  box-sizing: border-box;
+}
+
+.chitchat-submit{
+  margin-top: .5rem;
+  height: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.chitchat-submit:disabled{
+  cursor: not-allowed;
+  background-color: #D3D3D3;
+  opacity: .5;
+}

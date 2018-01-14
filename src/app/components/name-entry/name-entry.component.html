@@ -1,0 +1,15 @@
+<form #nameEntryForm="ngForm"
+      (ngSubmit)="goToChat()"
+      class="name-entry-form">
+  <label for="name">Hello! What is your name?</label>
+  <input id="name"
+         name="name"
+         type="text"
+         class="chitchat-input name-input"
+         [(ngModel)]="name"
+         placeholder="Please enter your name"
+         required/>
+  <button type="submit"
+         class="chitchat-submit name-submit"
+         [disabled]="!nameEntryForm.form.valid">Go</button>
+</form>

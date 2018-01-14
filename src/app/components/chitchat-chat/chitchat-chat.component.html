@@ -1,0 +1,27 @@
+<div class="chat-panel">
+  <form #chatForm="ngForm"
+        (ngSubmit)="enterMessage()"
+        class="chat-form">
+    <h1>Chitchat with {{name}}</h1>
+    <div class="chat-history">
+      <ng-container *ngFor="let entry of chatHistory">
+        <div class="chat-entry">
+          <span class="name-label">{{entry.author}}</span><span>:</span><span>{{entry.message}}</span>
+        </div>
+      </ng-container>
+    </div>
+    <div class="chat-entry-controls">
+      <textarea
+             name="chatEntry"
+             id="chatEntry"
+             [(ngModel)]="nextEntry"
+             class="chitchat-input chat-entry-field"
+             rows="2"
+             placeholder="Message"
+             required></textarea>
+      <button type="submit"
+              class="chitchat-submit chat-entry-submit"
+              [disabled]="!chatForm.form.valid">Send</button>
+    </div>
+  </form>
+</div>
